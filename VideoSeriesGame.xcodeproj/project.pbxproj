@@ -7,24 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		417563301DA80F330036BEF8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4175632F1DA80F330036BEF8 /* main.cpp */; };
+		417563451DA80F990036BEF8 /* EventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 417563371DA80F990036BEF8 /* EventHandler.cpp */; };
+		417563461DA80F990036BEF8 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 417563391DA80F990036BEF8 /* Game.cpp */; };
+		417563471DA80F990036BEF8 /* GLSLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4175633B1DA80F990036BEF8 /* GLSLProgram.cpp */; };
+		417563481DA80F990036BEF8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4175633D1DA80F990036BEF8 /* main.cpp */; };
+		417563491DA80F990036BEF8 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4175633E1DA80F990036BEF8 /* ResourceManager.cpp */; };
+		4175634A1DA80F990036BEF8 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 417563431DA80F990036BEF8 /* Sprite.cpp */; };
+		4175634C1DA80FBE0036BEF8 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4175634B1DA80FBE0036BEF8 /* OpenGL.framework */; };
+		4175634E1DA80FC70036BEF8 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4175634D1DA80FC70036BEF8 /* SDL2.framework */; };
+		4175634F1DA80FDF0036BEF8 /* ColorShader.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 417563411DA80F990036BEF8 /* ColorShader.frag */; };
+		417563501DA80FDF0036BEF8 /* ColorShader.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 417563421DA80F990036BEF8 /* ColorShader.vert */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4175632A1DA80F330036BEF8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = shaders;
+			dstSubfolderSpec = 16;
 			files = (
+				4175634F1DA80FDF0036BEF8 /* ColorShader.frag in CopyFiles */,
+				417563501DA80FDF0036BEF8 /* ColorShader.vert in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4175632C1DA80F330036BEF8 /* VideoSeriesGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VideoSeriesGame; sourceTree = BUILT_PRODUCTS_DIR; };
-		4175632F1DA80F330036BEF8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		417563361DA80F990036BEF8 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		417563371DA80F990036BEF8 /* EventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventHandler.cpp; sourceTree = "<group>"; };
+		417563381DA80F990036BEF8 /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
+		417563391DA80F990036BEF8 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		4175633A1DA80F990036BEF8 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		4175633B1DA80F990036BEF8 /* GLSLProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLSLProgram.cpp; sourceTree = "<group>"; };
+		4175633C1DA80F990036BEF8 /* GLSLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLSLProgram.h; sourceTree = "<group>"; };
+		4175633D1DA80F990036BEF8 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4175633E1DA80F990036BEF8 /* ResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceManager.cpp; sourceTree = "<group>"; };
+		4175633F1DA80F990036BEF8 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		417563411DA80F990036BEF8 /* ColorShader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorShader.frag; sourceTree = "<group>"; };
+		417563421DA80F990036BEF8 /* ColorShader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorShader.vert; sourceTree = "<group>"; };
+		417563431DA80F990036BEF8 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		417563441DA80F990036BEF8 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
+		4175634B1DA80FBE0036BEF8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4175634D1DA80FC70036BEF8 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4175634E1DA80FC70036BEF8 /* SDL2.framework in Frameworks */,
+				4175634C1DA80FBE0036BEF8 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +69,8 @@
 		417563231DA80F330036BEF8 = {
 			isa = PBXGroup;
 			children = (
+				4175634D1DA80FC70036BEF8 /* SDL2.framework */,
+				4175634B1DA80FBE0036BEF8 /* OpenGL.framework */,
 				4175632E1DA80F330036BEF8 /* VideoSeriesGame */,
 				4175632D1DA80F330036BEF8 /* Products */,
 			);
@@ -57,9 +87,30 @@
 		4175632E1DA80F330036BEF8 /* VideoSeriesGame */ = {
 			isa = PBXGroup;
 			children = (
-				4175632F1DA80F330036BEF8 /* main.cpp */,
+				417563361DA80F990036BEF8 /* CMakeLists.txt */,
+				417563371DA80F990036BEF8 /* EventHandler.cpp */,
+				417563381DA80F990036BEF8 /* EventHandler.h */,
+				417563391DA80F990036BEF8 /* Game.cpp */,
+				4175633A1DA80F990036BEF8 /* Game.h */,
+				4175633B1DA80F990036BEF8 /* GLSLProgram.cpp */,
+				4175633C1DA80F990036BEF8 /* GLSLProgram.h */,
+				4175633D1DA80F990036BEF8 /* main.cpp */,
+				4175633E1DA80F990036BEF8 /* ResourceManager.cpp */,
+				4175633F1DA80F990036BEF8 /* ResourceManager.h */,
+				417563401DA80F990036BEF8 /* shaders */,
+				417563431DA80F990036BEF8 /* Sprite.cpp */,
+				417563441DA80F990036BEF8 /* Sprite.h */,
 			);
 			path = VideoSeriesGame;
+			sourceTree = "<group>";
+		};
+		417563401DA80F990036BEF8 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				417563411DA80F990036BEF8 /* ColorShader.frag */,
+				417563421DA80F990036BEF8 /* ColorShader.vert */,
+			);
+			path = shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417563301DA80F330036BEF8 /* main.cpp in Sources */,
+				417563461DA80F990036BEF8 /* Game.cpp in Sources */,
+				417563471DA80F990036BEF8 /* GLSLProgram.cpp in Sources */,
+				417563481DA80F990036BEF8 /* main.cpp in Sources */,
+				417563451DA80F990036BEF8 /* EventHandler.cpp in Sources */,
+				4175634A1DA80F990036BEF8 /* Sprite.cpp in Sources */,
+				417563491DA80F990036BEF8 /* ResourceManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +261,10 @@
 		417563341DA80F330036BEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +272,10 @@
 		417563351DA80F330036BEF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -1,15 +1,16 @@
-//
-//  main.cpp
-//  VideoSeriesGame
-//
-//  Created by Joshua McDonald on 10/7/16.
-//  Copyright (c) 2016 Joshua McDonald. All rights reserved.
-//
 
 #include <iostream>
+#include "Game.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+
+    // Constructor
+    Game *game = new Game();
+
+    // Start the game
+    game->start();
+
+    // When we get here, it means we've broken out of the game loop
     return 0;
+
 }
