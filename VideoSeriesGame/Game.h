@@ -16,28 +16,25 @@
 class Game {
 
     // Properties
-    SDL_Window *_window;
-    EventHandler _eh;
-    bool _run;
+    static SDL_Window *_window;
+    static EventHandler _eh;
+    static bool _run;
 
-    GLSLProgram _program;
+    static GLSLProgram _program;
 
-    Sprite *_sprite;
+    static Sprite *_sprite;
 
     // Methods
-    bool run();
-    void init();
-    bool initSDL();
-    bool initEvents();
-    bool handleQuit(SDL_Event *evt);
-    bool handleKeydown(SDL_Event *evt);
+    static bool run();
+    static void init();
+    static bool initSDL();
+    static bool initEvents();
+    static bool handleQuit(SDL_Event *evt);
+    static bool handleKeydown(SDL_Event *evt);
 
 public:
 
-    Game();
-    ~Game();
-
-    void start();
+    static void start();
 
 };
 

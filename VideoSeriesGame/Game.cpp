@@ -4,15 +4,13 @@
 
 #include "Game.h"
 
-Game::Game() :
-        _run(true),
-        _eh() {
+SDL_Window *Game::_window;
+EventHandler Game::_eh = EventHandler();
+bool Game::_run = true;
 
-}
+GLSLProgram Game::_program;
 
-Game::~Game() {
-
-}
+Sprite *Game::_sprite;
 
 // Kick off the game loop
 
@@ -25,7 +23,7 @@ void Game::start() {
         return;
     }
 
-    while(run()) {
+    while(Game::run()) {
 
     }
 
@@ -57,8 +55,8 @@ bool Game::run() {
 
 void Game::init() {
 
-    initSDL();
-    initEvents();
+    Game::initSDL();
+    Game::initEvents();
 
     _sprite = new Sprite(-0.5f, -0.5f, 1.0f, 1.0f);
 
@@ -91,9 +89,9 @@ bool Game::initSDL() {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     //Set the background color to blue
-    glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-    _program.compileShaders("shaders/ColorShader.vert", "shaders/ColorShader.frag");
+    Game::_program.compileShaders("shaders/ColorShader.vert", "shaders/ColorShader.frag");
 
     return true;
 }
@@ -101,8 +99,8 @@ bool Game::initSDL() {
 bool Game::initEvents() {
     using namespace std::placeholders;
 
-    _eh.registerEvent(SDL_QUIT, std::bind(&Game::handleQuit, this, _1));
-    _eh.registerEvent(SDL_KEYDOWN, std::bind(&Game::handleKeydown, this, _1));
+    Game::_eh.registerEvent(SDL_QUIT, Game::handleQuit);
+    Game::_eh.registerEvent(SDL_KEYDOWN, Game::handleKeydown);
 
     return true;
 }
