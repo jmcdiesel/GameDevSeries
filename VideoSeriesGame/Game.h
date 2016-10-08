@@ -17,7 +17,7 @@ class Game {
 
     // Properties
     static SDL_Window *_window;
-    static EventHandler _eh;
+
     static bool _run;
 
     static GLSLProgram _program;
@@ -35,6 +35,7 @@ class Game {
 public:
 
     static void start();
+    static GLSLProgram getProgram();
 
 };
 

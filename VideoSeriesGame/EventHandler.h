@@ -14,15 +14,12 @@ typedef std::function<bool(SDL_Event *)> cbEvent;
 
 class EventHandler {
 
-    std::map<Uint32, std::vector<cbEvent>> _events;
+    static std::map<Uint32, std::vector<cbEvent>> _events;
 
 public:
 
-    EventHandler();
-    ~EventHandler();
-
-    bool handleEvents();
-    void registerEvent(Uint32 evtType, cbEvent);
+    static bool handleEvents();
+    static void registerEvent(Uint32 evtType, cbEvent);
 
 };
 

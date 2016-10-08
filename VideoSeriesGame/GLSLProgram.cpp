@@ -94,6 +94,10 @@ void GLSLProgram::unuse() {
     glUseProgram(0);
 }
 
+GLuint GLSLProgram::getProgramId() {
+    return _programId;
+}
+
 GLSLProgram::GLSLProgram() :
     _programId(0),
     _vertexShaderId(0),

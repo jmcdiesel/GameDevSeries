@@ -25,6 +25,7 @@ public:
     void compileShaders(std::string vertexPath, std::string fragmentPath);
     void use();
     void unuse();
+    GLuint getProgramId();
 
 
 };

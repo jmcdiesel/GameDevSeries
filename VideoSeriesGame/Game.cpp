@@ -5,7 +5,7 @@
 #include "Game.h"
 
 SDL_Window *Game::_window;
-EventHandler Game::_eh = EventHandler();
+
 bool Game::_run = true;
 
 GLSLProgram Game::_program;
@@ -35,7 +35,7 @@ void Game::start() {
 
 bool Game::run() {
 
-    _run = _eh.handleEvents();
+    _run = EventHandler::handleEvents();
 
     //Set the base depth to 1.0
     glClearDepth(1.0);
@@ -58,7 +58,7 @@ void Game::init() {
     Game::initSDL();
     Game::initEvents();
 
-    _sprite = new Sprite(-0.5f, -0.5f, 1.0f, 1.0f);
+    _sprite = new Sprite(-0.5f, -0.5f, 1.0f, 1.0f, _program);
 
 }
 
@@ -99,8 +99,8 @@ bool Game::initSDL() {
 bool Game::initEvents() {
     using namespace std::placeholders;
 
-    Game::_eh.registerEvent(SDL_QUIT, Game::handleQuit);
-    Game::_eh.registerEvent(SDL_KEYDOWN, Game::handleKeydown);
+    EventHandler::registerEvent(SDL_QUIT, Game::handleQuit);
+    EventHandler::registerEvent(SDL_KEYDOWN, Game::handleKeydown);
 
     return true;
 }

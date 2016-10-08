@@ -3,13 +3,21 @@
 //
 
 #include "Sprite.h"
+#include "Game.h"
 
-Sprite::Sprite(float x, float y, float w, float h) {
+Sprite::Sprite(float x, float y, float w, float h, GLSLProgram program) {
     _x = x;
     _y = y;
     _w = w;
     _h = h;
-
+    
+    _program = program;
+    
+    _vboId = 0;
+    
+    _position.x = 0;
+    _position.y = 0;
+    
     init();
 }
 
@@ -20,6 +28,9 @@ Sprite::~Sprite() {
 }
 
 void Sprite::init() {
+    using namespace std::placeholders;
+    EventHandler::registerEvent(SDL_KEYDOWN, std::bind(&Sprite::handleKeydown, this, _1));
+    
     if (_vboId == 0) {
         glGenBuffers(1, &_vboId);
     }
@@ -53,13 +64,38 @@ void Sprite::init() {
 
 }
 
+bool Sprite::handleKeydown(SDL_Event *evt) {
+
+    switch(evt->key.keysym.scancode) {
+        case SDL_SCANCODE_RIGHT:
+            _position.x += 0.01f;
+            break;
+        case SDL_SCANCODE_LEFT:
+            _position.x -= 0.01f;
+            break;
+        case SDL_SCANCODE_UP:
+            _position.y += 0.01f;
+            break;
+        case SDL_SCANCODE_DOWN:
+            _position.y -= 0.01f;
+            break;
+        default:
+            break;
+    }
+    
+    return true;
+}
+
 void Sprite::draw() {
 
     glBindBuffer(GL_ARRAY_BUFFER, _vboId);
     glEnableVertexAttribArray(0);
 
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
+    
+    GLuint locTranslate = glGetUniformLocation(_program.getProgramId(), "translate");
+    glUniform2f(locTranslate, _position.x, _position.y);
+    
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     glDisableVertexAttribArray(0);
