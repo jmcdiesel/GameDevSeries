@@ -14,8 +14,9 @@ class GLSLProgram {
     GLuint _programId;
     GLuint _vertexShaderId;
     GLuint _fragmentShaderId;
+    GLint _attributeCount;
 
-    void linkShaders();
+    
     void compileShader(GLuint shaderId, std::vector<char> source);
 
 public:
@@ -25,6 +26,8 @@ public:
     void compileShaders(std::string vertexPath, std::string fragmentPath);
     void use();
     void unuse();
+    void addAttribute(std::string name);
+    void linkShaders();
     GLuint getProgramId();
 
 

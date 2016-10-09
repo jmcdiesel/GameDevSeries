@@ -34,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4143E2CA1DA9AF170028CC03 /* vertexData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vertexData.h; sourceTree = "<group>"; };
 		4175632C1DA80F330036BEF8 /* VideoSeriesGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VideoSeriesGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		417563361DA80F990036BEF8 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		417563371DA80F990036BEF8 /* EventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventHandler.cpp; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 				417563401DA80F990036BEF8 /* shaders */,
 				417563431DA80F990036BEF8 /* Sprite.cpp */,
 				417563441DA80F990036BEF8 /* Sprite.h */,
+				4143E2CA1DA9AF170028CC03 /* vertexData.h */,
 			);
 			path = VideoSeriesGame;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 				417563351DA80F330036BEF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

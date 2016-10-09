@@ -89,10 +89,13 @@ bool Game::initSDL() {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     //Set the background color to blue
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
 
     Game::_program.compileShaders("shaders/ColorShader.vert", "shaders/ColorShader.frag");
-
+    Game::_program.addAttribute("vertexPosition");
+    Game::_program.addAttribute("vertexColor");
+    Game::_program.linkShaders();
+    
     return true;
 }
 

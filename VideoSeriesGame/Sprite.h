@@ -16,8 +16,8 @@ class Sprite {
     GLSLProgram _program;
     
     struct {
-        float x;
-        float y;
+        float x = 0;
+        float y = 0;
     } _position;
     
     float _x;
