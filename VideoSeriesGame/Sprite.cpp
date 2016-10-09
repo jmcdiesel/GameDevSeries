@@ -122,7 +122,7 @@ void Sprite::draw() {
     glBindBuffer(GL_ARRAY_BUFFER, _vboId);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(vertexData), (void *)offsetof(vertexData, position));
-    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(vertexData), (void *)offsetof(vertexData, color));
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(vertexData), (void *)offsetof(vertexData, color));
     
     printf("%lu, %lu, %lu \n", sizeof(vertexData), offsetof(vertexData, position), offsetof(vertexData, color));
 
