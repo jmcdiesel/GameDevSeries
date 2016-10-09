@@ -125,31 +125,7 @@ void Sprite::draw() {
     glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(vertexData), (void *)offsetof(vertexData, color));
     
     printf("%lu, %lu, %lu \n", sizeof(vertexData), offsetof(vertexData, position), offsetof(vertexData, color));
-    
- 
-    
-    int* activeAttribs = new int[1];
-    int* maxNameLength = new int[1];
-    glGetProgramiv(_program.getProgramId(), GL_ACTIVE_ATTRIBUTES, activeAttribs);
-    printf("active attribute count: %d\n", activeAttribs[0]);
-    glGetProgramiv(_program.getProgramId(), GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, maxNameLength);
-    printf("max name length: %d\n", maxNameLength[0]);
-    
-    
-    char* nameBuffer = new char[maxNameLength[0]];
-    
-    /* Loop and get metadata for each */
-    int* sizeBuffer = new int[1];
-    unsigned int* typeBuffer = new unsigned int[1];
-    int* nameLenBuffer = new int[1];
-    
-    for(int i = 0; i < activeAttribs[0]; i++) {
-        glGetActiveAttrib(_program.getProgramId(), i, maxNameLength[0], nameLenBuffer, sizeBuffer, typeBuffer, nameBuffer);
-        printf("\tattrib: %s\n", nameBuffer);
-    }
-    
-    
-    
+
     GLuint locTranslate = glGetUniformLocation(_program.getProgramId(), "translate");
     glUniform2f(locTranslate, _position.x, _position.y);
     
