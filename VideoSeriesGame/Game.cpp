@@ -87,7 +87,7 @@ bool Game::initSDL() {
     //Tell SDL that we want a double buffered window so we dont get
     //any flickering
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
+    
     //Set the background color to blue
     glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
 

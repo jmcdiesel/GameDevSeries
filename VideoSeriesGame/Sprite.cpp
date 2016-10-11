@@ -39,6 +39,7 @@ void Sprite::init() {
 
     vData[0].position.x = _x + _w;
     vData[0].position.y = _y + _w;
+    vData[0].position.z = -1.0f;
     
     vData[1].position.x = _x;
     vData[1].position.y = _y + _h;
@@ -55,35 +56,35 @@ void Sprite::init() {
     vData[5].position.x = _x + _w;
     vData[5].position.y = _y + _h;
     
-    vData[0].color.r = 1.0;
-    vData[0].color.g = 1.0;
-    vData[0].color.b = 1.0;
-    vData[0].color.a = 1.0;
+    vData[0].color.r = 255;
+    vData[0].color.g = 128;
+    vData[0].color.b = 0;
+    vData[0].color.a = 255;
     
-    vData[1].color.r = 1.0;
-    vData[1].color.g = 1.0;
-    vData[1].color.b = 1.0;
-    vData[1].color.a = 1.0;
+    vData[1].color.r = 128;
+    vData[1].color.g = 255;
+    vData[1].color.b = 255;
+    vData[1].color.a = 255;
     
-    vData[2].color.r = 1.0;
-    vData[2].color.g = 1.0;
-    vData[2].color.b = 1.0;
-    vData[2].color.a = 1.0;
+    vData[2].color.r = 100;
+    vData[2].color.g = 200;
+    vData[2].color.b = 5;
+    vData[2].color.a = 255;
     
-    vData[3].color.r = 1.0;
-    vData[3].color.g = 1.0;
-    vData[3].color.b = 1.0;
-    vData[3].color.a = 1.0;
+    vData[3].color.r = 5;
+    vData[3].color.g = 5;
+    vData[3].color.b = 80;
+    vData[3].color.a = 255;
     
-    vData[4].color.r = 1.0;
-    vData[4].color.g = 1.0;
-    vData[4].color.b = 1.0;
-    vData[4].color.a = 1.0;
+    vData[4].color.r = 70;
+    vData[4].color.g = 74;
+    vData[4].color.b = 25;
+    vData[4].color.a = 255;
     
-    vData[5].color.r = 1.0;
-    vData[5].color.g = 1.0;
-    vData[5].color.b = 1.0;
-    vData[5].color.a = 1.0;
+    vData[5].color.r = 255;
+    vData[5].color.g = 255;
+    vData[5].color.b = 0;
+    vData[5].color.a = 255;
     
     
     // Bind the buffer and send the data
@@ -121,8 +122,10 @@ void Sprite::draw() {
     
     glBindBuffer(GL_ARRAY_BUFFER, _vboId);
     glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(vertexData), (void *)offsetof(vertexData, position));
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(vertexData), (void *)offsetof(vertexData, color));
+    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(vertexData), (void *)offsetof(vertexData, color));
     
     printf("%lu, %lu, %lu \n", sizeof(vertexData), offsetof(vertexData, position), offsetof(vertexData, color));
 
@@ -132,6 +135,6 @@ void Sprite::draw() {
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    SDL_Delay(500);
 }

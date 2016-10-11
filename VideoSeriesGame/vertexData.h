@@ -17,10 +17,10 @@ typedef struct {
         GLfloat w = 1.0f;
     } position;
     struct {
-        GLfloat r = 255;
-        GLfloat g = 255;
-        GLfloat b = 255;
-        GLfloat a = 255;
+        GLbyte r = 255;
+        GLbyte g = 255;
+        GLbyte b = 255;
+        GLbyte a = 255;
     } color;
 } vertexData;
 
