@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8F811F4F-2275-4A1D-8326-11E1CCE49014</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>VideoSeriesGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>02605D34DA6252CE91DB5A1C1E42D714EE10E5B0</key>
 		<string>github.com:jmcdiesel/GameDevSeries.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>VideoSeriesGame.xcodeproj/project.xcworkspace</string>
+	<string>VideoSeriesGame.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>02605D34DA6252CE91DB5A1C1E42D714EE10E5B0</key>

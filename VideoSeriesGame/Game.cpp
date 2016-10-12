@@ -92,7 +92,11 @@ bool Game::initSDL() {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     Game::_program.compileShaders("shaders/ColorShader.vert", "shaders/ColorShader.frag");
-
+    
+    Game::_program.registerAttribute("vertexPosition");
+    Game::_program.registerAttribute("vertexColor");
+    
+    Game::_program.linkShaders();
     return true;
 }
 

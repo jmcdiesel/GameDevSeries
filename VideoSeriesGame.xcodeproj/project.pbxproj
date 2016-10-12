@@ -51,6 +51,7 @@
 		417563441DA80F990036BEF8 /* Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sprite.h; sourceTree = "<group>"; };
 		4175634B1DA80FBE0036BEF8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4175634D1DA80FC70036BEF8 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		41FDFD6C1DAC6C8C00F675AD /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +101,7 @@
 				417563401DA80F990036BEF8 /* shaders */,
 				417563431DA80F990036BEF8 /* Sprite.cpp */,
 				417563441DA80F990036BEF8 /* Sprite.h */,
+				41FDFD6C1DAC6C8C00F675AD /* Vertex.h */,
 			);
 			path = VideoSeriesGame;
 			sourceTree = "<group>";
@@ -299,6 +301,7 @@
 				417563351DA80F330036BEF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

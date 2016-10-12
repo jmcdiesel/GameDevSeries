@@ -5,6 +5,8 @@
 #include "Sprite.h"
 #include "Game.h"
 
+#include "Vertex.h"
+
 Sprite::Sprite(float x, float y, float w, float h, GLSLProgram program) {
     _x = x;
     _y = y;
@@ -35,25 +37,25 @@ void Sprite::init() {
         glGenBuffers(1, &_vboId);
     }
 
-    float vertexData[12];
+    Vertex vertexData[12];
 
-    vertexData[0] = _x + _w;
-    vertexData[1] = _y + _w;
+    vertexData[0].position.x = _x + _w;
+    vertexData[0].position.y = _y + _w;
 
-    vertexData[2] = _x;
-    vertexData[3] = _y + _h;
+    vertexData[1].position.x = _x;
+    vertexData[1].position.y = _y + _h;
 
-    vertexData[4] = _x;
-    vertexData[5] = _y;
+    vertexData[2].position.x = _x;
+    vertexData[2].position.y = _y;
 
-    vertexData[6] = _x;
-    vertexData[7] = _y;
+    vertexData[3].position.x = _x;
+    vertexData[3].position.y = _y;
 
-    vertexData[8] = _x + _w;
-    vertexData[9] = _y;
+    vertexData[4].position.x = _x + _w;
+    vertexData[4].position.y = _y;
 
-    vertexData[10] = _x + _w;
-    vertexData[11] = _y + _h;
+    vertexData[5].position.x = _x + _w;
+    vertexData[5].position.y = _y + _h;
 
     // Bind the buffer and send the data
     glBindBuffer(GL_ARRAY_BUFFER, _vboId);
@@ -90,8 +92,10 @@ void Sprite::draw() {
 
     glBindBuffer(GL_ARRAY_BUFFER, _vboId);
     glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    glEnableVertexAttribArray(1);
+    
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *)offsetof(Vertex, position));
+    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(Vertex), (void *)offsetof(Vertex, color));
     
     GLuint locTranslate = glGetUniformLocation(_program.getProgramId(), "translate");
     glUniform2f(locTranslate, _position.x, _position.y);
@@ -99,6 +103,7 @@ void Sprite::draw() {
     glDrawArrays(GL_TRIANGLES, 0, 6);
 
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 }

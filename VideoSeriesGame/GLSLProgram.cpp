@@ -83,7 +83,11 @@ void GLSLProgram::compileShaders(std::string vertexPath, std::string fragmentPat
     compileShader(_vertexShaderId, vertexShaderBuffer);
     compileShader(_fragmentShaderId, fragmentShaderBuffer);
 
-    linkShaders();
+}
+
+void GLSLProgram::registerAttribute(std::string attr) {
+    glBindAttribLocation(_programId, _attrCount, attr.c_str());
+    _attrCount += 1;
 }
 
 void GLSLProgram::use() {
@@ -101,7 +105,8 @@ GLuint GLSLProgram::getProgramId() {
 GLSLProgram::GLSLProgram() :
     _programId(0),
     _vertexShaderId(0),
-    _fragmentShaderId(0)
+    _fragmentShaderId(0),
+    _attrCount(0)
 {
 
 }

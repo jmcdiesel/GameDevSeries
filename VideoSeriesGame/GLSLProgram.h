@@ -15,16 +15,20 @@ class GLSLProgram {
     GLuint _vertexShaderId;
     GLuint _fragmentShaderId;
 
-    void linkShaders();
+    int _attrCount;
+    
+
     void compileShader(GLuint shaderId, std::vector<char> source);
 
 public:
 
     GLSLProgram();
-
+    
+    void linkShaders();
     void compileShaders(std::string vertexPath, std::string fragmentPath);
     void use();
     void unuse();
+    void registerAttribute(std::string attr);
     GLuint getProgramId();
 
 
